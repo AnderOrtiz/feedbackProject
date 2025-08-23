@@ -1,9 +1,9 @@
-const realiceDatos = (dato, nombre, valor) => {
+const realiceDatos = (dato) => {
     return new Promise((resolve, reject) => {
         switch (dato) {
             case 'usuario':
                 setTimeout(() => {
-                    resolve(`${dato}, ${nombre}, ${valor} cargado`)
+                    resolve('usuario cargado')
                     
                 }, 2000);
                 break;
@@ -11,23 +11,22 @@ const realiceDatos = (dato, nombre, valor) => {
 
             case 'producto' :
                 setTimeout(() => {
-                    resolve(`${dato}, ${nombre}, ${valor} cargado`)
+                    resolve('producto cargado')
                     
-                }, 3000);
+                }, 4000);
             break;
 
 
             case 'orden' :
                 setTimeout(() => {
-                    resolve(`${dato}, ${nombre}, ${valor} cargado`)
-                }, 4000);
+                    resolve('orden cargado')
+                    
+                }, 6000);
             break;
 
 
             default:
-                setTimeout(() => {
-                    reject(`dato ${dato} no se pudo cargar`)
-                }, 3000);
+                reject(`dato ${dato} no se pudo cargar`)
                 break;
         }
     }) 
